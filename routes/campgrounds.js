@@ -70,7 +70,7 @@ router.put("/:id", middleware.checkCampgroundOwnerShip, function(req, res){
        console.log(req.user.username + " updated a campground:");
        console.log(foundCampground.name);
        res.flash("success", "Campground updated");
-       res.redirect("/campgrounds/" + req.params.id);
+       res.redirect("/campgrounds" + req.params.id);
    });
 });
 
