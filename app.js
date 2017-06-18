@@ -25,6 +25,7 @@ mongoose.Promise = global.Promise;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+
 //seedDB();
 app.use(function(req, res, next){
     console.log('DD-MM-YY hh:mm'.timestamp + ": " + req.method, req.url, req.body);
@@ -37,6 +38,8 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(flash());
 
 //MIDDLEWARE
 app.use(passport.initialize());
@@ -51,8 +54,6 @@ app.use(function(req, res, next){
     res.locals.success = req.flash("success");
     next();
 });
-
-app.use(flash());
 
 //USING ROUTES
 app.use("/", indexRoutes);
