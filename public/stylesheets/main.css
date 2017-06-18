@@ -1,0 +1,22 @@
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    text-align: justify;
+}
+
+.thumbnail .imgIndex {
+    height: 200px;
+    object-fit: cover;
+}
+
+.delete-form {
+    display: inline;
+}
